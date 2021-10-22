@@ -1,4 +1,4 @@
-from collections import Sequence
+from collections.abc import Sequence
 
 from estudent.errors import LogicError
 from estudent.grade import Grade, FinalGrade

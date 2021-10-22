@@ -1,0 +1,37 @@
+Grade
+
+1. is_passing:
+-> Scenariusz dla oceny "zdającej"
+-> Scenariusz dla oceny "nie zdającej"
+
+GradeCalculator
+
+1. normal_promotion_policy:
+-> Promuje gdy nie przekroczono limitu ocen "nie zdających"
+-> Nie promuje gdy przekroczono limit ocen "nie zdających"
+
+2. strict_promotion_policy
+-> Nie promuje gdy przekroczono limit ocen "nie zdających"
+-> Nie promuje gdy średnia gorsza niż 3
+-> Promuje gdy nie przekroczono limitu ocen "nie zdających" i średnia co najmniej 3
+
+3. get_number_of_failing_grades
+-> Dla listy zawierającej oceny zdające i nie zdające zwraca liczbę zdających
+-> Jak zachowa się dla pustej listy?
+
+4. calculate_student_avg
+-> Oblicza średnią arytmetyczną z wartości podanych ocen
+-> Jak zachowa się dla pustej listy?
+
+Student
+
+1. Czy str() zawiera poprawne informacje (np. imię, info o promocji, średnią)
+2. Czy grades_average() liczy średnią?
+3. Czy promote() promuje ucznia?
+4. add_final_grade
+-> Czy zapisuje przekazaną ocenę do ocen ucznia?
+-> Czy używa domyślnie odpowiedniej polityki promocyjnej? (W tym wypadku jest to "normal_promotion_policy")
+-> Czy promuje ucznia gdy ma odpowiednie oceny?
+-> Czy NIE promuje ucznia gdy NIE ma odpowiednich ocen?
+
+

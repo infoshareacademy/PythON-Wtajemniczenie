@@ -1,4 +1,4 @@
-from collections import Callable
+from collections.abc import Callable
 
 from new_movies.user import Role, User
 

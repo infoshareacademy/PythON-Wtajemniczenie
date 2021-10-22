@@ -1,4 +1,4 @@
-from collections import Callable
+from collections.abc import Callable
 from typing import TypeVar, Any
 
 F = TypeVar("F", bound=Callable[..., Any])
