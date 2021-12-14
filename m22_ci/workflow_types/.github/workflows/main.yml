@@ -1,0 +1,40 @@
+name: CI checks
+
+on: [push]
+
+jobs:
+  tests:
+      name: Run pytest
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install pipenv
+        run: pip install pipenv
+      - name: Run tests
+        run: |
+          pipenv install --dev
+          pipenv run pytest
+
+  code-quality:
+    name: Check code quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: pylinter
+        uses: alexanderdamiani/pylinter@v1.3.0
+        with:
+          flake8-flags: '--max-line-length 120'
+
+  black:
+    name: Run Black check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: RojerGS/python-black-check@master
+        with:
+          line-length: '120'

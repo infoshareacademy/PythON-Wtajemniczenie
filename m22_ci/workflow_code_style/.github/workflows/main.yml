@@ -1,0 +1,20 @@
+name: CI checks
+
+on: [push]
+
+jobs:
+  tests:
+      name: Run pytest
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install pipenv
+        run: pip install pipenv
+      - name: Run tests
+        run: |
+          pipenv install --dev
+          pipenv run pytest
