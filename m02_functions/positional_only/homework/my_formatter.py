@@ -1,14 +1,14 @@
 def my_formatter_non_pos(string, **values):
     for formatting_name, value in values.items():
         search_pattern = f"<{formatting_name}>"
-        string.replace(search_pattern, value)
+        string = string.replace(search_pattern, value)
     return string
 
 
 def my_formatter(string, /, **values):
     for formatting_name, value in values.items():
         search_pattern = f"<{formatting_name}>"
-        string.replace(search_pattern, value)
+        string = string.replace(search_pattern, value)
     return string
 
 
